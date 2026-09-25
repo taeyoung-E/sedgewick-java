@@ -21,6 +21,11 @@ public class UnionFind{
         return sites[value];
     }
 
+    private int find(int value, boolean flag){
+        while(value != sites[value]) value = sites[value];
+        return value;
+    }
+
     //Quick Find implementation
     /*
     (N + 3) To read and write once because of find and write operation
@@ -45,6 +50,13 @@ public class UnionFind{
 
 
     public void unionQuickFind(int arg1, int arg2){
+        int pId = find(arg1,true);
+        int qId = find(arg2,true);
+
+        if(pId == qId) return;
+
+        sites[pId] = qId;
+        count--;
 
     }
 
