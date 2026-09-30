@@ -1,5 +1,12 @@
 package union_find;
 
+/**
+ * Implement Path Compression
+ * Skipping to grandparent right away
+ *
+ * Or use the 2nd loop to iterate again to point to parent directly making the tree flat
+ */
+
 public class WeightedUnion {
     int[] sites;
     int[] size;
