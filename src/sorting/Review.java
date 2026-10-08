@@ -85,4 +85,41 @@ public class Review {
             original[index++] = right[rightP++];
         }
     }
+
+    public void quickSort(int[] arr,int start,int end){
+        if(start >= end)
+            return;
+        int pivot = partition(arr,start,end);
+        quickSort(arr,start,pivot - 1);
+        quickSort(arr,pivot + 1,end);
+    }
+
+    public int partition(int[] arr,int start,int end){
+        int left = start, right = end - 1; // Value 1 before the pivot
+
+        while(left < right)
+        {
+            if(arr[left] > arr[end])
+            {
+                while(arr[right] > arr[end] && right > left)
+                {
+                    right--;
+                }
+                Review.swap(arr,left,right);
+            }
+            if(left == right) break;
+            left++;
+        }
+        if(arr[left] > arr[end])
+        {
+            Review.swap(arr,left,end);
+            return left;
+        }
+        else
+        {
+            left++;
+            Review.swap(arr,left,end);
+            return left;
+        }
+    }
 }

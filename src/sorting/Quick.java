@@ -47,4 +47,6 @@ public class Quick {
         }
         return left;
     }
+
+    //Tomorrow, Review Quick
 }
